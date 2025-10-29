@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'config.dart';
 
 class AITimerService {
-  static const String geminiApiKey = 'AIzaSyAmBsDnCHseIufoq69JsMbJw0xKCvyKFTc';
+  static String get geminiApiKey => Config.geminiApiKey;
   static const String apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
   
   static const String systemPrompt = '''
@@ -75,6 +76,12 @@ Remember: Always err on the side of food safety. Return only JSON, no additional
 ''';
 
   static Future<TimerSuggestion?> getTimerSuggestion(String userInput) async {
+    // API 키 확인
+    if (!Config.hasApiKey) {
+      print('❌ Gemini API key not configured');
+      return null;
+    }
+    
     try {
       print('Getting timer suggestion for: $userInput');
       

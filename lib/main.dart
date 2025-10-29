@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'ai_timer_service.dart';
 import 'ai_timer_service_simple.dart';
+import 'config.dart';
 
 void main() {
   runApp(const MyApp());
@@ -77,8 +78,8 @@ class _TimerHomePageState extends State<TimerHomePage> with SingleTickerProvider
       curve: Curves.easeInOut,
     );
     
-    // 사용 가능한 모델 테스트 (디버깅용)
-    // ModelTester.listAvailableModels();
+    // API 키 상태 확인 (디버깅용)
+    Config.checkApiKey();
   }
 
   @override
