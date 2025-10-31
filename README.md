@@ -9,6 +9,9 @@ A smart, AI-powered timer application built with Flutter that supports natural l
 ### Quick Access QR Code
 ![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://kheedogg.github.io/universal_timer/)
 
+### Screenshot
+![Universal Timer App](universal_timer_test_image.png)
+
 ## ✨ Features
 
 - **Natural Language Input**: Type casual expressions like "햇반 먹을꺼임 ㅋㅋ" or "ramen" and get appropriate timer durations
